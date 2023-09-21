@@ -13,13 +13,15 @@ const resizeCards = cards => {
     });
 }
 
-const resizeImg = (img, ref) => {
-    img && ref && (img.style.height = `calc(100% - ${getComputedStyle(ref).height} - 3rem)`);
+const resizeImg = (target, ref) => {
+    target && ref && (target.style.height = `calc(100% - ${getComputedStyle(ref).height} - 3rem)`);
 }
 
 if (refImg)
     refImg.onload = () => {
-        resizeImg(img, refImg);
+        img.onload = () => {
+            resizeImg(img, refImg);
+        }
     };
 
 window.addEventListener("load", () => {
