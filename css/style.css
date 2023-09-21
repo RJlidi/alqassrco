@@ -2028,10 +2028,6 @@ ul.dropdown-menu li {
   width: 100%;
 }
 
-.about-img {
-  cursor: pointer;
-}
-
 .about-img:hover img {
   transform: scale3D(1.04, 1.04, 1.04);
 }
