@@ -39,7 +39,6 @@ const toggleDirection = (element, dir) => {
 
 const feature = document.querySelector(".feature");
 const handleTranslation = () => {
-    body.style.display = "none";
     const ltr = (document.documentElement.attributes.dir.value === "ltr");
     document.documentElement.setAttribute("dir", (ltr ? "rtl" : "ltr"));
     translate(body);
@@ -48,7 +47,6 @@ const handleTranslation = () => {
         feature.style.backgroundImage = `url(./assets/feature-${ltr ? "right" : "left"}.jpg)`;
 
     window.localStorage.setItem("ar", String(ltr));
-    body.style.display = "block";
 
 }
 
