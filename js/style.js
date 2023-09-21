@@ -12,6 +12,10 @@ const resizeCards = cards => {
         card.style.paddingBottom = `${parseInt(styles.paddingBottom) + (tallestHeight - parseInt(styles.height))}px`;
     });
 }
+if (refImg)
+    refImg.onload = () => {
+        (img.style.height = `calc(100% - ${getComputedStyle(refImg).height} - 3rem)`);
+    }
 
 window.addEventListener("load", () => {
     refImg && (img.style.height = `calc(100% - ${getComputedStyle(refImg).height} - 3rem)`);
@@ -19,10 +23,6 @@ window.addEventListener("load", () => {
 
 });
 
-if (refImg)
-    refImg.onload = () => {
-        (img.style.height = `calc(100% - ${getComputedStyle(refImg).height} - 3rem)`);
-    }
 
 
 langSwitcher.addEventListener("click", () => {
